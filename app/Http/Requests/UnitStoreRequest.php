@@ -28,6 +28,7 @@ class UnitStoreRequest extends FormRequest
             'number_bathrooms'=>'required|numeric|',
             'area'=>'required|string|',
             'image'=>'required|mimes:png,jpg,jpeg,svg|',
+            'unit_code'=>'required|unique:units',
 
         ];
     }

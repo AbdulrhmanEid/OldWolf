@@ -25,7 +25,6 @@ class UserDataRequest extends FormRequest
             'name'=>'required|string|',
             'email'=>'required|string|unique:userdatas|email',
             'phone_number'=>'required|numeric',
-            'unit_code'=>'required|string',
             'description'=>'string',
         ];
     }

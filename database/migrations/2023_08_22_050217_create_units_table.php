@@ -19,8 +19,6 @@ return new class extends Migration
             $table->integer('number_bathrooms');
             $table->string('area');
             $table->string('image');
-
-
             $table->timestamps();
         });
     }

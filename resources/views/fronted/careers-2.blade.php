@@ -4,22 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../bootstrap-4.0.0-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="{{ asset('fronted/bootstrap-4.0.0-dist/css/bootstrap.css') }}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
       integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/careers-2.css" />
+    <link rel="stylesheet" href="{{ asset('fronted/css/careers-2.css') }}" />
     <title>Old Wolf</title>
   </head>
   <body>
     <header>
+        <a href="{{ route('LangConverter','ar') }}">Arabic</a>
+        <a href="{{ route('LangConverter','en') }}">English</a>
       <nav class="navbar navbar-expand-lg">
         <a href="#" class="navbar-brand" id="brand"
           ><img
-            src="../images/logo.jpeg"
+            src="{{ asset('fronted/images/logo.jpeg') }}"
             class="img-fluid"
             alt="" style="border-radius:5px ;"
         /></a>
@@ -29,67 +31,53 @@
         <div class="collapse navbar-collapse" id="x">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
             <li class="nav-item p-1">
-              <a href="#" class="nav-link">Home</a>
+              <a href="{{ route('home') }}" class="nav-link">{{ __('MyCustom.home') }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="#" class="nav-link">Property</a>
+              <a href="" class="nav-link">Property</a>
             </li>
             <li class="nav-item p-1">
-              <a href="#" class="nav-link">Gallery</a>
+              <a href="{{ route('gallery') }}" class="nav-link">{{ __('MyCustom.Gallery') }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="#" class="nav-link">Contact</a>
+              <a href="{{ route('contact') }}" class="nav-link">{{ __('MyCustom.Contact ') }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="#" class="nav-link active">Careers</a>
+              <a href="{{ route('careers') }}" class="nav-link active">{{ __('MyCustom.Careers') }}</a>
             </li>
           </ul>
-          <div class="btn pl-4 pr-4 p-2 ml-3" id="btn">
+          <a href="{{ route('search') }}" class="btn pl-4 pr-4 p-2 ml-3" id="btn">
             <i class="fa-solid fa-magnifying-glass mr-2"></i>Search
-          </div>
+          </a>
         </div>
       </nav>
     </header>
     <section class="mb-5 pb-4">
       <div class="container-fluid">
         <h2 class="pt-5 text-center text-light pb-2">
-          Careers
+            {{ __('MyCustom.Careers') }}
         </h2>
-        <h4 class="text-light text-center">Recently posted jobs</h4>
+        <h4 class="text-light text-center">{{ __('MyCustom.Recently posted jobs') }}</h4>
         <div class="text-center">
-          <img src="../images/line-11.svg" style="width: 250px" alt="" />
+          <img src="{{ asset('fronted/images/line-11.svg') }}" style="width: 250px" alt="" />
         </div>
         <div class="row p-5">
           <div class="col-md-6 career-image-1 mb-4">
-            <img src="../images/old1.svg" style="height:350px ;border-radius: 30px;" class="img-fluid w-100" alt="">
+            <img src="{{ asset('fronted/images/old1.svg') }}" style="height:350px ;border-radius: 30px;" class="img-fluid w-100" alt="">
           </div>
           <div class="col-md-6 text-light hiring" style="text-align:justify">
-            <h2 class="gold mb-4">IT HELP DESK</h2>
+            <h2 class="gold mb-4">{{ $career->name }}</h2>
             <p class="m-1">
-              Old Wolf is hiring Senior Help-Desk staff with the following
-              qualifications and experience
+              {{$career->description }}
             </p>
-            <p class="m-1">
-              1- Computer science or information technology graduate
-            </p>
-            <p class="m-1">
-              2- Min 5 years of experience in help desk support in a reputable
-              company or institution
-            </p>
-            <p class="m-1">
-              3- Hand on experience with Windows 10, Mac OS, Office 365 and 2019
-              is a must. Managing help desk.
-            </p>
-            <p class="m-1">
-              if interested, please send your resume to:
-            </p>
+
             <p class="m-1">
               HR@oldwolf.ae
             </p>
 
           </div>
           <div class="col-md-6 career-image-2">
-            <img src="../images/old1.svg" style="height:350px ;border-radius: 35px;" class="img-fluid w-100" alt="">
+            <img src="{{ asset('fronted/images/old1.svg') }}" style="height:350px ;border-radius: 35px;" class="img-fluid w-100" alt="">
           </div>
         </div>
       </div>
@@ -99,7 +87,7 @@
         <div class="row">
           <div class="col-lg-3">
             <img
-              src="../images/logo.jpeg"
+              src="{{ asset('fronted/images/logo.jpeg') }}"
               class="img-fluid w-lg-75"
               alt="" style="border-radius:20px ;" />
             <div class="d-flex justify-content-between ml-auto mr-auto icons mt-4 mb-4">
@@ -109,14 +97,14 @@
             </div>
           </div>
           <div class="col-lg-4 text-light text-center m-auto">
-            <h4>WORKING HOURS</h4>
+            <h4>{{ __('MyCustom.WORKING HOURS') }}</h4>
             <p class="d-flex justify-content-between p-1 border-bottom">
-              <span> Saturday - Thursday</span>
+              <span> {{ __('MyCustom.Saturday - Thursday') }}</span>
               <span>10 AM - 19 PM</span>
             </p>
             <p class="d-flex justify-content-between p-1 border-bottom">
-              <span>Friday</span>
-              <span>Closed</span>
+              <span>{{ __('MyCustom.Friday') }}</span>
+              <span>{{ __('MyCustom.Closed') }}</span>
             </p>
             <div class="text-left">
               <p><i class="fa-solid fa-phone mr-2"></i>+20 0100 810 5192</p>
@@ -146,8 +134,12 @@
             </div>
             <h6 class="pt-4 pb-1 border-bottom">SUBSCRIBE NEWSLETTER</h6>
             <div class="row m-1 mt-4">
-              <div class="col-8 p-2 enter-email">Enter your email</div>
-              <div class="col-4 p-2 subscripe">Subscripe</div>
+                <form action="{{ route('sub.store') }}" method="post">
+                    @csrf
+                <input type="email" placeholder="Enter your email" name="email" />
+              </div>
+              <div class="col-4 p-2 subscripe"><button type="submit">Subscripe</button></div>
+            </form>
             </div>
           </div>
         </div>

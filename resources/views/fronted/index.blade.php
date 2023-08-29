@@ -16,8 +16,10 @@
   </head>
   <body>
     <header>
+        <a href="{{ route('LangConverter','ar') }}">Arabic</a>
+        <a href="{{ route('LangConverter','en') }}">English</a>
       <nav class="navbar navbar-expand-lg">
-        <a href="#" class="navbar-brand" id="brand"
+        <a href="{{ route('home') }}" class="navbar-brand" id="brand"
           ><img
             src="{{ asset('fronted/images/logo.jpeg') }}"
             class="img-fluid"
@@ -29,154 +31,97 @@
         <div class="collapse navbar-collapse" id="x">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
             <li class="nav-item p-1">
-              <a href="{{ route('home')}}" class="nav-link active">Home</a>
+              <a href="{{ route('home')}}" class="nav-link active">{{ __('MyCustom.home') }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="#" class="nav-link">Property</a>
+              <a href="{{ route('search') }}" class="nav-link">{{ __('MyCustom.Property')  }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="{{ route('gallery') }}" class="nav-link">Gallery</a>
+              <a href="{{ route('gallery') }}" class="nav-link">{{__('MyCustom.Gallery')}}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="{{ route('contact')}}" class="nav-link">Contact</a>
+              <a href="{{ route('contact')}}" class="nav-link">{{ __('MyCustom.Contact ') }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="{{ route('careers') }}" class="nav-link">Careers</a>
+              <a href="{{ route('careers') }}" class="nav-link">{{ __('MyCustom.Careers') }}</a>
             </li>
           </ul>
-          <div class="btn pl-4 pr-4 p-2 ml-3" id="btn">
+          <a href="{{ route('search') }}" class="btn pl-4 pr-4 p-2 ml-3" id="btn">
             <i class="fa-solid fa-magnifying-glass mr-2"></i>Search
-          </div>
+          </a>
         </div>
       </nav>
     </header>
+    <form action="{{ route('search') }}" method="post">
+        @csrf
     <section class="search m-auto">
-      <div class="row m-auto">
-        <div class="col-lg-3 text-center p-1 pl-3 pr-3">
-          <p class="text-left">Location</p>
-          <div class="dropdown">
-            <div class="d-flex justify-content-between" id="location" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p>Select Country</p>
-              <i class="fa-solid fa-sort-down"></i>
-            </div>
-            <div class="dropdown-menu" aria-labelledby="location" style="background-color: #0D0D0D;" >
-              <a class="dropdown-item text-light" href="#"></a>
-              <a class="dropdown-item text-light" href="#">Another action</a>
-              <a class="dropdown-item text-light" href="#">Something else here</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-2 text-center p-1 pl-3 pr-3 border-left">
-          <p class="text-left">Region</p>
-          <div class="dropdown">
-            <div class="d-flex justify-content-between" id="region" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p>Any</p>
-              <i class="fa-solid fa-sort-down"></i>
-            </div>
-            <div class="dropdown-menu" aria-labelledby="region" style="background-color: #0D0D0D;">
-              <a class="dropdown-item text-light" href="#">Action</a>
-              <a class="dropdown-item text-light" href="#">Another action</a>
-              <a class="dropdown-item text-light" href="#">Something else here</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3 text-center p-1 pl-3 pr-3 border-left">
-          <p class="text-left">Property Type</p>
-          <div class="dropdown">
-            <div class="d-flex justify-content-between" id="property-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p>Any</p>
-              <i class="fa-solid fa-sort-down"></i>
-            </div>
-            <div class="dropdown-menu" aria-labelledby="property-type" style="background-color: #0D0D0D; ">
-              <a class="dropdown-item text-light" href="#">Action</a>
-              <a class="dropdown-item text-light" href="#">Another action</a>
-              <a class="dropdown-item text-light" href="#">Something else here</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3 text-center p-1 pl-3 pr-3 border-left">
-          <p class="text-left">Property Status</p>
-          <div class="dropdown">
-            <div class="d-flex justify-content-between" id="property-status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p>Select</p>
-              <i class="fa-solid fa-sort-down"></i>
-            </div>
-            <div class="dropdown-menu" aria-labelledby="property-status" style="background-color: #0D0D0D;">
-              <a class="dropdown-item text-light" href="#"></a>
-              <a class="dropdown-item text-light" href="#">Buy</a>
+        <div class="row m-auto">
+          <div class="col-lg-3 text-center p-1 pl-3 pr-3">
+            <p class="text-left">{{ __('MyCustom.location') }}</p>
+            <div>
+              <select id="country-dd" class="w-100 select" name="country_name">
+                <option value="">-- Select --</option>
+                @foreach ($counteries as $country)
+                <option value="{{ $country->name }}">{{ $country->name }}</option>
+                @endforeach
+              </select>
 
             </div>
           </div>
-        </div>
-        <div class="col-1 text-center search-icon p-1 border-left">
-          <i class="fa-solid fa-magnifying-glass mr-2"></i>
-        </div>
-      </div>
-    </section>
-    <section class="small-search container-fluid mt-5">
-      <div class="row">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          fill="currentColor"
-          class="bi bi-filter text-light col-2"
-          viewBox="0 0 16 16">
-          <path
-            d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-        </svg>
-        <div class="col-4 p-2 text-center buy hide-filter">Buy</div>
-        <div class="col-4 p-2 text-center rent hide-filter">Rent</div>
-      </div>
-      <div class="row hide-filter">
-        <div class="col-2 p-0"></div>
-        <div class="col-8 p-0">
-          <div class="dropdown">
-            <div class="d-flex justify-content-between align-items-center mt-4"  id="location" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p class="ml-4 mt-auto mb-auto p-2 text-light">Location</p>
-              <i class="fa-solid fa-location-dot mr-4"></i>
-            </div>
-            <div class="dropdown-menu w-100" aria-labelledby="location" style="background-color: #0D0D0D;">
-              <a class="dropdown-item text-light" href="#">Action</a>
-              <a class="dropdown-item text-light" href="#">Another action</a>
-              <a class="dropdown-item text-light" href="#">Something else here</a>
+          <div class="col-2 text-center p-1 pl-3 pr-3 border-left">
+            <p class="text-left">{{ __('MyCustom.region') }}</p>
+            <div>
+              <select name="region_name" id="cars" class="w-100 select">
+                <option value="">-- Select --</option>
+                @foreach ($regions as $region)
+                <option>{{$region->name  }}</option>
+                @endforeach
+              </select>
             </div>
           </div>
-          <div class="dropdown">
-            <div class="d-flex justify-content-between mt-4  align-items-center" id="region" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p class="ml-4 mt-auto mb-auto p-2 text-light">Region</p>
-              <i class="fa-solid fa-location-crosshairs mr-4"></i>
-            </div>
-            <div class="dropdown-menu w-100" aria-labelledby="region" style="background-color: #0D0D0D;">
-              <a class="dropdown-item text-light" href="#">Action</a>
-              <a class="dropdown-item text-light" href="#">Another action</a>
-              <a class="dropdown-item text-light" href="#">Something else here</a>
+          <div class="col-3 text-center p-1 pl-3 pr-3 border-left">
+            <p class="text-left">{{ __('MyCustom.Property Type ') }}</p>
+            <div>
+              <select name="pro_name"  class="w-100 select">
+                <option value="volvo">-- Select --</option>
+                @foreach ($types as $type)
+                <option value="{{$type->name  }}" >{{$type->name  }}</option>
+                @endforeach
+
+              </select>
             </div>
           </div>
-          <div class="dropdown">
-            <div class="d-flex justify-content-between mt-4  align-items-center"id="property-status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p class="ml-4 mt-auto mb-auto p-2 text-light">Property type</p>
-              <i class="fa-solid fa-building-circle-check mr-4"></i>
+          <div class="col-3 text-center p-1 pl-3 pr-3 border-left">
+            <p class="text-left">{{ __('MyCustom.Property Status ') }}</p>
+            <div>
+              <select name="status_name"  class="w-100 select">
+                <option value="">-- Select --</option>
+                @foreach ($statuses as $status)
+                <option value="{{$status->name  }}" >{{$status->name  }}</option>
+                @endforeach
+            </select>
+
+
             </div>
-            <div class="dropdown-menu w-100" aria-labelledby="property-status" style="background-color: #0D0D0D;">
-              <a class="dropdown-item text-light" href="#">Action</a>
-              <a class="dropdown-item text-light" href="#">Another action</a>
-              <a class="dropdown-item text-light" href="#">Something else here</a>
-            </div>
+          </div>
+          <div class="col-1 text-center search-icon p-1 border-left">
+             <button type="submit" class="btn btn-warning"><i class="fa-solid fa-magnifying-glass mr-2"></i></button>{{-- button --}}
           </div>
         </div>
-      </div>
-    </section>
+
+        </form>{{-- End form --}}
+      </section>
+
     <section class="mt-2 mb-5">
       <div class="container-fluid">
         <h2 class="pt-5 mt-lg-5 most-searched Montserrat text-center text-light mb-4">
-          Most Searched Places
+          {{ __('MyCustom.Most Searched Places ') }}
           <!-- <img src="./images/line-11.svg" style="width: 150px" alt="" /> -->
         </h2>
         <div class="row gallery-1">
           <div class="col-lg-4 col-sm-6 col-12 mb-3">
             <img src="{{ asset('fronted/images/--4-1@2x.png') }}" class="img-fluid w-100" alt="" style="height:860px ;border-radius: 30px;" />
-            <p class="country"><a href="" class="text-light">UAE</a></p>
+            <p class="country"><a href="{{ route('uae') }}" class="text-light">{{ __('MyCustom.UAE ') }}</a></p>
           </div>
           <div
             class="col-lg-4 col-sm-6 col-12 text-center mb-3"
@@ -186,14 +131,14 @@
               class="img-fluid mb-3 w-100"
               style="border-radius: 30px; height: 515px"
               alt="" />
-            <p class="country"><a href="" class="text-light">Egypt</a></p>
+            <p class="country"><a href="{{ route('egy') }}" class="text-light">{{ __('MyCustom.Egypt') }}</a></p>
             <img
               src="{{ asset('fronted/images/real-estate3-1@2x.png') }}"
               class="img-fluid w-100"
               style="height: 330px;border-radius: 30px;"
               alt="" />
             <p class="georgia">
-              <a href="" class="text-light">Georgia</a>
+              <a href="{{ route('gor') }}" class="text-light">{{ __('MyCustom.Georgia') }}</a>
             </p>
           </div>
           <div class="col-lg-4 col-sm-6 col-12 mb-3">
@@ -201,7 +146,7 @@
               src="{{ asset('fronted/images/clip-path-group1@2x.png') }}"
               class="img-fluid w-100 mb-3"
               alt="" style="height:860px ;border-radius: 30px;" />
-            <p class="country"><a href="" class="text-light">Turkiye</a></p>
+            <p class="country"><a href="{{ route('turk') }}" class="text-light">{{ __('MyCustom.Turkiye') }}</a></p>
           </div>
           <div class="arrows">
             <i class="fa-solid fa-angle-right" id="prev"></i>
@@ -255,14 +200,11 @@
           </div>
           <div class="col-lg-6">
             <h2 class="pt-5 pl-5 text-light about-header-2">
-              About Us
+              {{ __('MyCustom.About us') }}
               <!-- <img src="./images/group-14.svg" style="width: 100px" alt="" /> -->
             </h2>
             <p class="about-description text-light pt-3 pl-sm-5 pr-sm-5" style="text-align:justify">
-              Old Wolf Properties is established in August 2019 with a vision to
-              provide Leasing services to landlords and property management
-              companies with a large ratio of its satisfactory clients within
-              the Emirates spread over a wide geographic areas.
+              {{ __('MyCustom.Old Wolf') }}
             </p>
           </div>
         </div>
@@ -271,9 +213,9 @@
     <section class="contact">
       <div class="overlay"></div>
       <div class="contact-info">
-        <p>Looking For More?</p>
-        <h3>Talk to our experts or browse through more experties</h3>
-        <div class="btn pl-3 pr-3 p-2 ml-3 mt-3 text-dark" id="btn"><p><b>Contact Us</b></p></div>
+        <p>{{ __('MyCustom.Looking For More?') }}</p>
+        <h3>{{ __('MyCustom.Talk to our experts or browse through more experties') }}</h3>
+        <div class="btn pl-3 pr-3 p-2 ml-3 mt-3 text-dark" id="btn"><p><a href="{{ route('contact') }}"><b>{{ __('MyCustom.Contact Us') }}</b></a></p></div>
       </div>
     </section>
     <section
@@ -281,10 +223,10 @@
       style="background-color: #141414">
       <div class="container-fluid">
         <h2>
-          Meet our partners
+          {{ __('MyCustom.Meet our partners') }}
           <!-- <img src="images/group-14.svg" style="width: 100px" alt="" /> -->
         </h2>
-        <p>We honoured to have these amazing partners</p>
+        <p>{{ __('MyCustom.We') }}</p>
         <section class="companies mb-5">
           <section class="product pt-4">
             <div class="product-container">
@@ -381,10 +323,10 @@
     <section class="mt-5 mb-5 text-center text-light">
       <div class="container-fluid">
         <h2>
-          Our Employer
+         {{ __('MyCustom. Our Employers') }}
           <!-- <img src="images/group-14.svg" style="width: 100px" alt="" /> -->
         </h2>
-        <p class="">Meet The Team</p>
+        <p class="">{{ __('MyCustom. Meet The Team') }}</p>
         <section class="employer">
           <section class="product pt-4">
             <div class="product-container">
@@ -507,7 +449,7 @@
         <div class="row">
           <div class="col-lg-3">
             <img
-              src="{{ asset('fronted//images/logo.jpeg') }}"
+              src="{{ asset('fronted/images/logo.jpeg') }}"
               class="img-fluid w-lg-75"
               alt="" style="border-radius:20px ;" />
             <div class="d-flex justify-content-between ml-auto mr-auto icons mt-4 mb-4">
@@ -517,14 +459,14 @@
             </div>
           </div>
           <div class="col-lg-4 text-light text-center m-auto">
-            <h4>WORKING HOURS</h4>
+            <h4>{{ __('MyCustom. WORKING HOURS') }}</h4>
             <p class="d-flex justify-content-between p-1 border-bottom">
-              <span> Saturday - Thursday</span>
+              <span> {{ __('MyCustom.Saturday - Thursday') }}</span>
               <span>10 AM - 19 PM</span>
             </p>
             <p class="d-flex justify-content-between p-1 border-bottom">
-              <span>Friday</span>
-              <span>Closed</span>
+              <span>{{ __('MyCustom.Friday')}}</span>
+              <span>{{__('MyCustom.Closed')  }}</span>
             </p>
             <div class="text-left">
               <p><i class="fa-solid fa-phone mr-2"></i>+20 0100 810 5192</p>
@@ -547,15 +489,20 @@
             </div>
           </div>
           <div class="col-lg-4 text-light text-center ml-lg-5">
-            <h4>Careers</h4>
+            <h4>{{__('MyCustom.Careers')  }}</h4>
             <div class="border-bottom border-top p-1">
               <p class="mb-2">Join Our Team</p>
               <p class="m-0">HR@oldwolf.ae</p>
             </div>
             <h6 class="pt-4 pb-1 border-bottom">SUBSCRIBE NEWSLETTER</h6>
             <div class="row m-1 mt-4">
-              <div class="col-8 p-2 enter-email">Enter your email</div>
-              <div class="col-4 p-2 subscripe">Subscripe</div>
+              <div class="col-8 p-2 enter-email">
+                <form action="{{ route('sub.store') }}" method="post">
+                    @csrf
+                <input type="email" placeholder="Enter your email" name="email" />
+              </div>
+              <div class="col-4 p-2 subscripe"><button type="submit">Subscripe</button></div>
+            </form>
             </div>
           </div>
         </div>

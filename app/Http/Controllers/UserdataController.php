@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Userdata;
 use App\Http\Requests\UserDataRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserdataController extends Controller
@@ -13,7 +14,8 @@ class UserdataController extends Controller
      */
     public function index()
     {
-        //
+        $data = Userdata::all();
+      return view('Admin.data',compact('data'));
     }
 
     /**

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OldWolf - Add Career</title>
+    <title>OldWolf -  Units</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -73,6 +73,8 @@
                         <a class="collapse-item" href="{{ route('admin.register') }}">Register</a>
                         <a class="collapse-item" href="{{ route('admin.addcareer') }}"> Careers</a>
                         <a class="collapse-item" href="{{ route('admin.addunit') }}"> Units</a>
+                        <a class="collapse-item" href="{{ route('admin.data') }}"> Data</a>
+                        <a class="collapse-item" href="{{ route('admin.subscription') }}"> Subscriptions</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
@@ -82,18 +84,10 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
+
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -121,18 +115,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -162,122 +145,8 @@
                         </li>
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to
-                                            download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All
-                                    Alerts</a>
-                            </div>
-                        </li>
 
                         <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun · 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy
-                                            with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle"
-                                            src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More
-                                    Messages</a>
-                            </div>
-                        </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -285,7 +154,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Hello Admin</span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -351,7 +220,7 @@
                             }
 
                             .table-wrapper {
-                                min-width: 1000px;
+                                min-width: 3000px;
                                 background: #fff;
                                 padding: 20px 25px;
                                 border-radius: 3px;
@@ -678,7 +547,18 @@
                                                 <th>Number Of Badrooms</th>
                                                 <th>Number Of Bathrooms</th>
                                                 <th>Area</th>
+                                                <th>Unit Code</th>
+                                                <th>Location</th>
+                                                <th>Kitchen</th>
+                                                <th>Balcony</th>
+                                                <th>Description</th>
                                                 <th>Image</th>
+                                                <th>photo</th>
+                                                <th>photo 2</th>
+                                                <th>photo 3</th>
+                                                <th>photo 4</th>
+                                                <th>photo 5</th>
+                                                <th>photo 6</th>
                                                 <th>Actions</th>
                                             </tr>
 
@@ -701,15 +581,33 @@
                                                 <td>{{ $unit->status }}</td>
                                                 <td>{{ $unit->number_badrooms }}</td>
                                                 <td>{{ $unit->number_bathrooms }}</td>
-                                                <td>{{ $unit->area }}</td>
+                                                <td>{{$unit->area }}</td>
+                                                <td>{{$unit->unit_code }}</td>
+                                                <td>{{$unit->location }}</td>
+                                                <td>{{$unit->kitchen }}</td>
+                                                <td>{{$unit->balcony }}</td>
+                                                <td>{{$unit->description }}</td>
                                                 <td><img src="{{ Storage::url($unit->image) }}" alt="" srcset="" width="100"></td>
+                                                <td><img src="{{ Storage::url($unit->photo) }}" alt="" srcset="" width="100"></td>
+                                                <td><img src="{{ Storage::url($unit->photo2) }}" alt="" srcset="" width="100"></td>
+                                                <td><img src="{{ Storage::url($unit->photo3) }}" alt="" srcset="" width="100"></td>
+                                                <td><img src="{{ Storage::url($unit->photo4) }}" alt="" srcset="" width="100"></td>
+                                                <td><img src="{{ Storage::url($unit->photo5) }}" alt="" srcset="" width="100"></td>
+                                                <td><img src="{{ Storage::url($unit->photo6) }}" alt="" srcset="" width="100"></td>
                                                 <td>
-                                                    <a href="{{ route('admin.editunit',$unit->id),}}" class="edit"><i class="material-icons"
+                                                    <a href="{{route('admin.editunit',$unit->id)}}" class="edit"><i class="material-icons"
                                                             data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 
-                                                    <a href="#deleteEmployeeModal" class="delete"
+
+                                                    {{-- <a href="#deletemodel" type="button" class="delete"
                                                         data-toggle="modal"><i class="material-icons"
-                                                            data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                            data-toggle="tooltip" title="Delete">&#xE872;</i></a> --}}
+                                                   <!-- Button trigger modal -->
+                                                   <form action="{{ route('admin.destroyunit', $unit->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger m-0">Delete</button>
+                                                </form>
                                                 </td>
                                             </tr>
 
@@ -760,41 +658,94 @@
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Add Career</h4>
+                                            <h4 class="modal-title">Add Unit</h4>
                                             <button type="button" class="close" data-dismiss="modal"
                                                 aria-hidden="true">&times;</button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label> Type </label>
-                                                <input type="text" class="form-control" required name="type"
+                                                <input type="text" class="form-control"
                                                     name="type">
                                             </div>
                                             <div class="form-group">
                                                 <label> Status</label>
-                                                <input type="text" class="form-control" required name="status"
+                                                <input type="text" class="form-control"
                                                     name="status">
                                             </div>
                                             <div class="form-group">
                                                 <label> Number Of Badrooms</label>
-                                                <input type="text" class="form-control" required
-                                                    name="number_badrooms" name="number_badrooms">
+                                                <input type="text" class="form-control"  name="number_badrooms">
                                             </div>
                                             <div class="form-group">
                                                 <label> Number Of Bathrooms</label>
-                                                <input type="text" class="form-control" required
-                                                    name="number_bathrooms" name="number_bathrooms">
+                                                <input type="text" class="form-control"  name="number_bathrooms">
                                             </div>
                                             <div class="form-group">
                                                 <label> Area</label>
-                                                <input type="text" class="form-control" required name="area"
-                                                    name="area">
+                                                <input type="text" class="form-control" name="area"
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Unit Code</label>
+                                                <input type="text" class="form-control"
+                                                    name="unit_code">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Location </label>
+                                                <input type="text" class="form-control"
+                                                    name="location">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Number Of Kitchens </label>
+                                                <input type="text" class="form-control"
+                                                    name="kitchen">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Number Of Balcony </label>
+                                                <input type="text" class="form-control"
+                                                    name="balcony">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Description </label>
+                                                <textarea type="text" class="form-control"
+                                                    name="description"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label> Image</label>
-                                                <input type="file" class="form-control" required name="image"
+                                                <input type="file" class="form-control"
                                                     name="image">
                                             </div>
+                                            <div class="form-group">
+                                                <label> Photo</label>
+                                                <input type="file" class="form-control"
+                                                    name="photo">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Photo2</label>
+                                                <input type="file" class="form-control"
+                                                    name="photo2">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Photo3</label>
+                                                <input type="file" class="form-control"
+                                                    name="photo3">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Photo4</label>
+                                                <input type="file" class="form-control"
+                                                    name="photo4">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Photo5</label>
+                                                <input type="file" class="form-control"
+                                                    name="photo5">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Photo6</label>
+                                                <input type="file" class="form-control"
+                                                    name="photo6">
+                                            </div>
+
 
                                         </div>
                                         <div class="modal-footer">
@@ -841,30 +792,6 @@
                             </div>
                         </div>
                         <!-- Delete Modal HTML -->
-                        <div id="deleteEmployeeModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <form action="{{ route('admin.destroyunit',$unit->id) }} " method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Delete Unit</h4>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-hidden="true">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Are you sure you want to delete these Records?</p>
-                                            <p class="text-warning"><small>This action cannot be undone.</small></p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <input type="button" class="btn btn-default" data-dismiss="modal"
-                                                value="Cancel">
-                                            <input type="submit" class="btn btn-danger" value="Delete">
-                                        </div> {{-- Footer --}}
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </body>
 
                     </html>
@@ -912,7 +839,11 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <form action="{{ route('admin.logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">logout</button>
+                    </form>
+                    {{-- <a class="btn btn-primary" href="login.html">Logout</a> --}}
                 </div>
             </div>
         </div>

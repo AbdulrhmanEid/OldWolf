@@ -33,7 +33,8 @@ class AddCareerController extends Controller
        // return $request ;
        AddCareer::create([
         'name'=> $request->name ,
-        'location'=>$request->location
+        'location'=>$request->location,
+        'description'=>$request->description,
        ]);
        return redirect()->back()->with('message','Insert Suessfully');
     }
@@ -65,7 +66,8 @@ class AddCareerController extends Controller
     {
         $career = AddCareer::find($id);
         $career->name= $request->name ;
-        $career->location= $request->location ;
+        $career->location = $request->location;
+        $career->description = $request->description ;
         $career->save();
         return redirect()->route('admin.addcareer')->with('message','Updated Suessfully');
 
@@ -78,9 +80,12 @@ class AddCareerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AddCareer $addCareer , $id)
+    public function destroy( $id)
     {
-         AddCareer::find($id)->delete();
-         return redirect()->route('admin.addcareer')->with('message','Deleted Suessfully');
+        $career = AddCareer::findOrFail($id);
+
+        $career->delete();
+
+        return redirect()->route('admin.addcareer')->with('message', 'Deleted Suessfully');
     }
 }

@@ -27,7 +27,8 @@ class UnitUpdateRequest extends FormRequest
             'number_badrooms'=>'required|numeric|',
             'number_bathrooms'=>'required|numeric|',
             'area'=>'required|string|',
-            'image'=>'required|mimes:png,jpg,jpeg,svg|',
+            'image'=>'mimes:png,jpg,jpeg,svg|',
+            'unit_code'=>'required',
         ];
     }
 }

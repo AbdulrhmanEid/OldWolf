@@ -16,6 +16,8 @@
   </head>
   <body>
     <header>
+        <a href="{{ route('LangConverter','ar') }}">Arabic</a>
+        <a href="{{ route('LangConverter','en') }}">English</a>
       <nav class="navbar navbar-expand-lg">
         <a href="#" class="navbar-brand" id="brand"
           ><img
@@ -29,162 +31,61 @@
         <div class="collapse navbar-collapse" id="x">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
             <li class="nav-item p-1">
-              <a href="{{ route('home') }}" class="nav-link">Home</a>
+              <a href="{{ route('home') }}" class="nav-link">{{ __('MyCustom.home') }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="#" class="nav-link">Property</a>
+              <a href="#" class="nav-link">{{ __('MyCustom.Property') }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="{{ route('gallery') }}" class="nav-link">Gallery</a>
+              <a href="{{ route('gallery') }}" class="nav-link">{{ __('MyCustom.Gallery') }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="{{ route('contact') }}" class="nav-link">Contact</a>
+              <a href="{{ route('contact') }}" class="nav-link">{{ __('MyCustom.Gallery') }}</a>
             </li>
             <li class="nav-item p-1">
-              <a href="{{ route('careers') }}" class="nav-link active">Careers</a>
+              <a href="{{ route('careers') }}" class="nav-link active">{{ __('MyCustom.Contact ') }}</a>
             </li>
           </ul>
-          <div class="btn pl-4 pr-4 p-2 ml-3" id="btn">
+          <a href="{{ route('search') }}" class="btn pl-4 pr-4 p-2 ml-3" id="btn">
             <i class="fa-solid fa-magnifying-glass mr-2"></i>Search
-          </div>
+          </a>
         </div>
       </nav>
     </header>
     <section class="mb-5 pb-4">
       <div class="container-fluid">
         <h2 class="pt-5 text-center text-light pb-2">
-          Careers
+            {{ __('MyCustom.Careers') }}
         </h2>
-        <h4 class="text-light text-center">Recently posted jobs</h4>
+        <h4 class="text-light text-center">{{__('MyCustom.Recently posted jobs')  }}</h4>
         <div class="text-center">
-          <img src="../images/line-11.svg" style="width: 250px" alt="" />
+          <img src="{{ asset('fronted/images/line-11.svg') }}" style="width: 250px" alt="" />
         </div>
         <section class="companies mt-5 pt-4 mb-5">
           <section class="product pt-4">
             <div class="product-container">
-              <div class="product-card">
-                <div class="product-image d-flex justify-content-between">
-                  <img src="{{ asset('fronted//images/logo.jpeg') }}" alt=""class="img-fluid"
-                  alt="" style="border-radius:5px ;">
+
+              @foreach ($careers as $career ){
+                <div class="product-card">
+                    <div class="product-image d-flex justify-content-between">
+                      <img src="{{ asset('fronted/images/logo.jpeg') }}" alt=""class="img-fluid"
+                      alt="" style="border-radius:5px ;">
+
+                      <img src="{{ asset('fronted/images/save1.jpeg') }}" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="gold mb-4">{{ $career->name }}</h2>
+                        <h4 class="text-light mb-4">Old Wolf</h4>
+                        <p class="text-light mb-4">{{$career->location}}</p>
+                        <div class="text-center">
+                           <a href="{{ route('career.info',$career->id) }}" class="p-1 pr-3 pl-3">Apply Now</a>
+                        </div>
+                    </div>
+                  </div>
+              }
+              @endforeach
 
 
-                  <img src="{{ asset('fronted/images/save2.jpeg') }}" alt="">
-                </div>
-                <div class="product-info">
-                    <h2 class="gold mb-4">IT Help Desk</h2>
-                    <h4 class="text-light mb-4">Old Wolf</h4>
-                    <p class="text-light mb-4">Elmahalla Elkobra, Egypt</p>
-                    <div class="text-center">
-                        <input type="submit" value="Apply now" class="p-1 pr-3 pl-3">
-                    </div>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="product-image d-flex justify-content-between">
-                  <img src="{{ asset('fronted/images/logo.jpeg') }}" alt=""class="img-fluid"
-                  alt="" style="border-radius:5px ;">
-
-                  <img src="{{ asset('fronted/images/save1.jpeg') }}" alt="">
-                </div>
-                <div class="product-info">
-                    <h2 class="gold mb-4">HR</h2>
-                    <h4 class="text-light mb-4">Old Wolf</h4>
-                    <p class="text-light mb-4">Elmahalla Elkobra, Egypt</p>
-                    <div class="text-center">
-                        <input type="submit" value="Apply now" class="p-1 pr-3 pl-3">
-                    </div>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="product-image d-flex justify-content-between">
-                  <img src="{{ asset('fronted/images/logo.jpeg') }}" alt=""class="img-fluid"
-                  alt="" style="border-radius:5px ;">
-
-                  <img src="{{ asset('fronted/images/save1.jpeg') }}" alt="">
-                </div>
-                <div class="product-info">
-                    <h2 class="gold mb-4">Customer Service</h2>
-                    <h4 class="text-light mb-4">Old Wolf</h4>
-                    <p class="text-light mb-4">Elmahalla Elkobra, Egypt</p>
-                    <div class="text-center">
-                        <input type="submit" value="Apply now" class="p-1 pr-3 pl-3">
-                    </div>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="product-image d-flex justify-content-between">
-                  <img src="{{ asset('fronted/images/logo.jpeg') }}" alt=""class="img-fluid"
-                  alt="" style="border-radius:5px ;">
-
-                  <img src="{{ asset('fronted/images/save1.jpeg') }}" alt="">
-                </div>
-                <div class="product-info">
-                    <h2 class="gold mb-4">Sales</h2>
-                    <h4 class="text-light mb-4">Old Wolf</h4>
-                    <p class="text-light mb-4">Elmahalla Elkobra, Egypt</p>
-                    <div class="text-center">
-                        <input type="submit" value="Apply now" class="p-1 pr-3 pl-3">
-                    </div>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="product-image d-flex justify-content-between">
-                  <img src="{{ asset('fronted/images/logo.jpeg') }}" alt=""class="img-fluid"
-                  alt="" style="border-radius:5px ;">
-                  <img src="{{ asset('fronted/images/save1.jpeg') }}" alt="">
-                </div>
-                <div class="product-info">
-                    <h2 class="gold mb-4">IT Help Desk</h2>
-                    <h4 class="text-light mb-4">Old Wolf</h4>
-                    <p class="text-light mb-4">Elmahalla Elkobra, Egypt</p>
-                    <div class="text-center">
-                        <input type="submit" value="Apply now" class="p-1 pr-3 pl-3">
-                    </div>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="product-image d-flex justify-content-between">
-                  <img src="{{ asset('fronted/images/logo.jpeg') }}" alt=""class="img-fluid"
-                  alt="" style="border-radius:5px ;">
-                  <img src="{{ asset('fronted/images/save1.jpeg') }}" alt="">
-                </div>
-                <div class="product-info">
-                    <h2 class="gold mb-4">IT Help Desk</h2>
-                    <h4 class="text-light mb-4">Old Wolf</h4>
-                    <p class="text-light mb-4">Elmahalla Elkobra, Egypt</p>
-                    <div class="text-center">
-                        <input type="submit" value="Apply now" class="p-1 pr-3 pl-3">
-                    </div>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="product-image d-flex justify-content-between">
-                  <img src="{{ asset('fronted/images/logo.jpeg') }}" alt=""class="img-fluid"
-                  alt="" style="border-radius:5px ;">
-                  <img src="{{ asset('fronted/images/save1.jpeg') }}" alt="">
-                </div>
-                <div class="product-info">
-                    <h2 class="gold mb-4">IT Help Desk</h2>
-                    <h4 class="text-light mb-4">Old Wolf</h4>
-                    <p class="text-light mb-4">Elmahalla Elkobra, Egypt</p>
-                    <div class="text-center">
-                        <input type="submit" value="Apply now" class="p-1 pr-3 pl-3">
-                    </div>
-                </div>
-              </div>
-              <div class="product-card">
-                <div class="product-image d-flex justify-content-between">
-                  <img src="{{ asset('fronted/images/logo.jpeg') }}" alt=""class="img-fluid"
-                  alt="" style="border-radius:5px ;">
-                  <img src="{{ asset('fronted/images/save1.jpeg') }}" alt="">
-                </div>
-                <div class="product-info">
-                    <h2 class="gold mb-4">IT Help Desk</h2>
-                    <h4 class="text-light mb-4">Old Wolf</h4>
-                    <p class="text-light mb-4">Elmahalla Elkobra, Egypt</p>
-                    <div class="text-center">
-                        <input type="submit" value="Apply now" class="p-1 pr-3 pl-3">
-                    </div>
                 </div>
               </div>
             </div>
@@ -207,14 +108,14 @@
             </div>
           </div>
           <div class="col-lg-4 text-light text-center m-auto">
-            <h4>WORKING HOURS</h4>
+            <h4>{{ __('MyCustom. WORKING HOURS') }}</h4>
             <p class="d-flex justify-content-between p-1 border-bottom">
-              <span> Saturday - Thursday</span>
+              <span> {{ __('MyCustom.Saturday - Thursday') }}</span>
               <span>10 AM - 19 PM</span>
             </p>
             <p class="d-flex justify-content-between p-1 border-bottom">
-              <span>Friday</span>
-              <span>Closed</span>
+              <span>{{ __('MyCustom.Friday') }}</span>
+              <span>{{ __('MyCustom.Closed') }}</span>
             </p>
             <div class="text-left">
               <p><i class="fa-solid fa-phone mr-2"></i>+20 0100 810 5192</p>
@@ -244,8 +145,12 @@
             </div>
             <h6 class="pt-4 pb-1 border-bottom">SUBSCRIBE NEWSLETTER</h6>
             <div class="row m-1 mt-4">
-              <div class="col-8 p-2 enter-email">Enter your email</div>
-              <div class="col-4 p-2 subscripe">Subscripe</div>
+                <form action="{{ route('sub.store') }}" method="post">
+                    @csrf
+                <input type="email" placeholder="Enter your email" name="email" />
+              </div>
+              <div class="col-4 p-2 subscripe"><button type="submit">Subscripe</button></div>
+            </form>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AddCareer;
 use Illuminate\Http\Request;
 
 class CareersController extends Controller
@@ -11,7 +12,8 @@ class CareersController extends Controller
      */
     public function index()
     {
-        return view('fronted.careers-1');
+        $careers = AddCareer::all();
+        return view('fronted.careers-1',compact('careers'));
     }
 
     /**
@@ -35,8 +37,9 @@ class CareersController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
+
 
     /**
      * Show the form for editing the specified resource.

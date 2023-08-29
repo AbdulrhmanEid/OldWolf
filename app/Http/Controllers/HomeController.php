@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
+use App\Models\Propertystatus;
+use App\Models\PropertyType;
+use App\Models\Region;
+use App\Models\Unit;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +16,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('fronted.index');
+        $counteries = Country::get(['name','id']);
+        $regions = Region::get(['name','id']);
+        $types = PropertyType::get(['name','id']);
+        $statuses = Propertystatus::get(['name','id']);
+        //  return $types ;
+        return view('fronted.index',compact('counteries','regions','types','statuses'));
+
+
     }
 
     /**
@@ -61,4 +73,29 @@ class HomeController extends Controller
     {
         //
     }
+    public function search(Request $request){
+        $counteries = Country::get(['name','id']);
+        $regions = Region::get(['name','id']);
+        $types = PropertyType::get(['name','id']);
+        $statuses = Propertystatus::get(['name','id']);
+        $units = Unit::get();
+        // return $request->pro_name;
+        //  return dd($request->all()) ;
+         $results = Unit :: where('location','LIKE','%'.$request->country_name.'%')->get();
+        //  $results2 = Unit :: where('type','LIKE','%'.$request->pro_name.'%')->get();
+        $res1 = Unit :: where('location','LIKE','%'.$request->region_name.'%')->get();
+        $res2 = Unit :: where('type','LIKE','%'.$request->pro_name.'%')->get();
+        $res3 = Unit :: where('status','LIKE','%'.$request->status_name.'%')->get();
+        //  return $request->all();
+        //  return $res1 ;
+        // return $results;
+        // return $res1;
+        // return $results2;
+          // return $res3;
+           return view('fronted.random-search',compact('counteries','units','results','regions','types','statuses','res1','res2','res3')) ;
+
+
+    }
+
 }
+

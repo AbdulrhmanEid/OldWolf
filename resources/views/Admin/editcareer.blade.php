@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OldWolf - Add Career</title>
+    <title>OldWolf - Edit Career</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">{{-- vendor/fontawesome-free/css/all.min.css --}}
@@ -71,8 +71,10 @@
                         <h6 class="collapse-header">Login Screens:</h6>
                         <a class="collapse-item" href="{{ route('admin.login') }}">Login</a>
                         <a class="collapse-item" href="{{ route('admin.register') }}">Register</a>
-                        <a class="collapse-item" href="{{ route('admin.addcareer') }}">Add Career</a>
-                        <a class="collapse-item" href="{{ route('admin.addunit') }}">Add Unit</a>
+                        <a class="collapse-item" href="{{ route('admin.addcareer') }}"> Careers</a>
+                        <a class="collapse-item" href="{{ route('admin.addunit') }}"> Units</a>
+                        <a class="collapse-item" href="{{ route('admin.data') }}"> Data</a>
+                        <a class="collapse-item" href="{{ route('admin.subscription') }}"> Subscriptions</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
@@ -639,7 +641,7 @@
                         </script>
                     </head>
 
-                    <body>
+                    <body> 
 
                         @if (session('message'))
                             <div class="alert alert-success text-center">
@@ -671,6 +673,7 @@
                                                 <th>ID</th>
                                                 <th>Name</th>
                                                 <th>Location</th>
+                                                <th>Description</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -691,6 +694,7 @@
                                                             <td>{{ $career->id }}</td>
                                                             <td><input type="text" name="name" value="{{ $career->name }}"></td>
                                                             <td><input type="text" name="location" value="{{ $career->location }}"></td>
+                                                            <td><textarea type="text" name="description" value="">{{ $career->description }}</textarea></td>
                                                             <td>
                                                                 <button type="submit" class="btn btn-success">Update</button>
                                                             </td>
@@ -746,6 +750,10 @@
                                                 <label>Location</label>
                                                 <input type="text" class="form-control" required name="location">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <input type="text" class="form-control" required name="description">
+                                            </div>
 
                                         </div>
                                         <div class="modal-footer">
@@ -778,7 +786,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Location</label>
-                                                <input type="text" class="form-control" required name="location">
+                                                <input type="text" class="form-control"  name="location">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <textarea type="text" class="form-control"  name="description"></textarea>
                                             </div>
 
                                         </div>

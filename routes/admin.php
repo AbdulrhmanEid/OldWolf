@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AddCareerController;
+use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\UserdataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +23,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 Route::middleware('isAdmin')->group(function(){
 
-Route::view('index', 'admin.index')->name('index');
+Route::get('/index', [AdminHomeController::class,'index'])->name('index');
+// Route::view('index', 'admin.index')->name('index');
 Route::get('/AddCareer',[AddCareerController::class,'index'])->name('addcareer');
 Route::post('/add/career',[AddCareerController::class,'store'])->name('storecareer');
 Route::get('/edit/{id}/career',[AddCareerController::class,'edit'])->name('editecareer');
@@ -32,7 +36,10 @@ Route::get('/addunit',[UnitController::class,'index'])->name('addunit');
 Route::post('/store/unit',[UnitController::class,'store'])->name('storeunit');
 Route::get('/edit/{id}/unit',[UnitController::class,'edit'])->name('editunit');
 Route::put('/update/{id}/unit',[UnitController::class,'update'])->name('updateunit');
-Route::delete('/destroy/{id}/unit',[UnitController::class,'destroy'])->name('destroyunit');
+Route::delete('/unit/{id}/destroy',[UnitController::class,'destroy'])->name('destroyunit');
+
+Route::get('/date',[UserdataController::class,'index'])->name('data');
+Route::get('/subscription',[SubscriptionController::class,'index'])->name('subscription');
 
 
 

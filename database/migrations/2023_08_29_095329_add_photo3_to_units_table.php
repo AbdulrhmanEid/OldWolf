@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('regions', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('country_id');
-            $table->timestamps();
+        Schema::table('units', function (Blueprint $table) {
+            $table->string('photo3');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('regions');
+        Schema::table('units', function (Blueprint $table) {
+            //
+        });
     }
 };

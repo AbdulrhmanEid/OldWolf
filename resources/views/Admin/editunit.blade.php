@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OldWolf - Add Career</title>
+    <title>OldWolf - Edit Unit</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -74,6 +74,8 @@
                         <a class="collapse-item" href="{{ route('admin.register') }}">Register</a>
                         <a class="collapse-item" href="{{ route('admin.addcareer') }}"> Careers</a>
                         <a class="collapse-item" href="{{ route('admin.addunit') }}"> Units</a>
+                        <a class="collapse-item" href="{{ route('admin.data') }}"> Data</a>
+                        <a class="collapse-item" href="{{ route('admin.subscription') }}"> Subscriptions</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
@@ -83,18 +85,10 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
+            <
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -122,163 +116,25 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
+
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
+
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
+
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
+
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to
-                                            download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All
-                                    Alerts</a>
-                            </div>
-                        </li>
+
 
                         <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun · 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy
-                                            with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle"
-                                            src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More
-                                    Messages</a>
-                            </div>
-                        </li>
+
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -286,7 +142,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Hello Admin</span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -322,10 +178,9 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Update Career Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Update Unit Page</h1>
                     <!DOCTYPE html>
                     <html lang="en">
-
                     <head>
                         <meta charset="utf-8">
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -641,7 +496,6 @@
                     </head>
 
                     <body>
-
                         @if (session('message'))
                             <div class="alert alert-success text-center">
                                 <h2>{{ session('message') }}</h2>
@@ -656,55 +510,36 @@
                                                 <h2>Manage <b>Units</b></h2>
                                             </div>
                                             <div class="col-xs-6">
-
                                             </div>
                                         </div>
                                     </div>
                                     <table class="table table-striped table-hover">
-                                        {{-- <thead>
-                                            <tr>
-                                                <th>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="selectAll">
-                                                        <label for="selectAll"></label>
-                                                    </span>
-                                                </th>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Location</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead> --}}
                                         <tbody>
-
-
-                                            {{-- <tr>
-                                                <td>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox1" name="options[]"
-                                                            value="1">
-                                                        <label for="checkbox1"></label>
-                                                    </span>
-                                                </td> --}}
-                                                <form action="{{route('admin.updateunit',$unit->id) }}" method="post"
-                                                    enctype="multipart/form-data">
+                                                <form action="{{ route('admin.updateunit',$unit->id) }}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                     @method('PUT')
-
-                                                    <div class="modal-header">
+                                                    <div>
                                                         <h4 class="modal-title">Update Unit</h4>
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                            aria-hidden="true">&times;</button>
                                                     </div>
-                                                    <div class="modal-body">
+                                                    <div>
+
+                                                        <div class="form-group">
+                                                            <label> ID </label>
+                                                            <input type="text" class="form-control"
+                                                                name="id" value="{{ $unit->id }}" disabled>
+                                                        </div>
+
+
+
                                                         <div class="form-group">
                                                             <label> Type </label>
                                                             <input type="text" class="form-control"
                                                                 name="type" value="{{$unit->type }}">
                                                         </div>
+
                                                         <div class="form-group">
                                                             <label> Status</label>
-                                                            <input type="text" class="form-control" "
+                                                            <input type="text" class="form-control"
                                                                 name="status" value="{{ $unit->status }}">
                                                         </div>
                                                         <div class="form-group">
@@ -723,23 +558,56 @@
                                                                 name="area" value="{{ $unit->area }}">
                                                         </div>
                                                         <div class="form-group">
+                                                            <label> UnitCode</label>
+                                                            <input type="text" class="form-control"
+                                                                name="unit_code" value="{{$unit->unit_code }}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label> Location</label>
+                                                            <input type="text" class="form-control"
+                                                                name="location" value="{{ $unit->location }}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label> Number Of Kitchens</label>
+                                                            <input type="text" class="form-control"
+                                                                name="kitchen" value="{{ $unit->kitchen}}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label> Number Of Balcony</label>
+                                                            <input type="text" class="form-control"
+                                                                name="balcony" value="{{ $unit->balcony }}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label> Description</label>
+                                                            <textarea type="text" class="form-control"
+                                                                name="description" value="">{{ $unit->description }}</textarea>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label> Image</label>
                                                             <input type="file" class="form-control"
                                                                 name="image">
                                                         </div>
-
+                                                        <div class="form-group">
+                                                            <label> photo</label>
+                                                            <input type="file" class="form-control"
+                                                                name="photo">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label> photo 2 </label>
+                                                            <input type="file" class="form-control"
+                                                                name="photo2">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label> photo 3 </label>
+                                                            <input type="file" class="form-control"
+                                                                name="photo3">
+                                                        </div>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <input type="button" class="btn btn-default" data-dismiss="modal"
-                                                            value="Cancel">
-                                                        <input type="submit" class="btn btn-success" value="Update">
-                                                    </div>
-                                                </form>
 
-                                            </tr>
+                                                                <button type="submit" class="btn btn-success">Update</button>
 
                                         </tbody>
-
+                                    </form>
                                     </table>
                                     <div class="clearfix">
                                         <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
@@ -758,69 +626,13 @@
                             </div>
                         </div>
                         <!-- Store Modal HTML -->
-                        <div id="addEmployeeModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    {{-- sending Data to DB --}}
-                                    <form action="{{ route('admin.storecareer') }}" method="post">
-                                        @csrf
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Add Career</h4>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-hidden="true">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label> Job Name</label>
-                                                <input type="text" class="form-control" required name="name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Location</label>
-                                                <input type="text" class="form-control" required name="location">
-                                            </div>
 
-                                        </div>
-                                        <div class="modal-footer">
-                                            <input type="button" class="btn btn-default" data-dismiss="modal"
-                                                value="Cancel">
-                                            <input type="submit" class="btn btn-success" value="Add">
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div>
-                        </div>
                         <!-- Edit Modal HTML -->
-                        <div id="editEmployeeModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
 
-                                </div>
-                            </div>
-                        </div>
+
+
                         <!-- Delete Modal HTML -->
-                        <div id="deleteEmployeeModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <form>
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Delete Employee</h4>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-hidden="true">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Are you sure you want to delete these Records?</p>
-                                            <p class="text-warning"><small>This action cannot be undone.</small></p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <input type="button" class="btn btn-default" data-dismiss="modal"
-                                                value="Cancel">
-                                            <input type="submit" class="btn btn-danger" value="Delete">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+
                     </body>
 
                     </html>
@@ -837,7 +649,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; OldWpld 2023</span>
                     </div>
                 </div>
             </footer>
