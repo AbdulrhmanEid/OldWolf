@@ -14,3 +14,13 @@ filter.onclick=function(){
         }
     })
 }
+let buy=document.querySelector(".buy")
+ let rent=document.querySelector(".rent")
+buy.onclick=function(){
+    rent.classList.remove("active")
+    buy.classList.add("active")
+}
+rent.onclick=function(){
+    buy.classList.remove("active")
+    rent.classList.add("active")
+}

@@ -96,23 +96,35 @@ a.active{
 .small-search{
     display: none;
 }
-.small-search .d-flex{
+.small-search .div{
     background-color: #1A1A1A;
     color: var(--main-color);
-    border-radius: 20px;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
 }
 .rent{
     background-color: #1A1A1A;
     color: var(--main-color);
     cursor: pointer;
-    border-radius:0 20px 20px  0;
+    border-radius:0 10px 10px  0;
+    -webkit-border-radius:0 10px 10px  0;
+    -moz-border-radius:0 10px 10px  0;
+    -ms-border-radius:0 10px 10px  0;
+    -o-border-radius:0 10px 10px  0;
 }
 .buy{
-    background-color: var(--main-color);
-    color: #0D0D0D;
+    background-color: #1A1A1A;
+    color: var(--main-color);
     font-weight: bold;
     cursor: pointer;
-    border-radius: 20px 0 0 20px;
+    border-radius: 10px 0 0 10px;
+    -webkit-border-radius: 10px 0 0 10px;
+    -moz-border-radius: 10px 0 0 10px;
+    -ms-border-radius: 10px 0 0 10px;
+    -o-border-radius: 10px 0 0 10px;
 }
 .bi-filter{
     cursor: pointer;
@@ -163,7 +175,7 @@ a.active{
 @media (max-width:500px) {
     .Montserrat{
         font-size: 35px;
-    } 
+    }
 }
 .gallery-2{
     display: none;
@@ -221,11 +233,11 @@ a.active{
     overflow-x: auto;
     scroll-behavior: smooth;
   }
-  
+
   .companies .product-container::-webkit-scrollbar {
     display: none;
   }
-  
+
   .companies .product-card {
     flex: 0 0 auto;
     width: 255px;
@@ -263,11 +275,11 @@ a.active{
     overflow-x: auto;
     scroll-behavior: smooth;
   }
-  
+
   .employer .product-container::-webkit-scrollbar {
     display: none;
   }
-  
+
   .employer .product-card {
     flex: 0 0 auto;
     width: 175px;
@@ -310,6 +322,9 @@ a.active{
     font-weight: bold;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
+    outline: none;
+    border: none;
+
 }
   .myDiv{
     position: fixed;
@@ -395,4 +410,36 @@ a.active{
     .myDiv img{
       height: 50vh;
     }
+
   }
+  .footer .enter-email input{
+    background-color: #1A1A1A;
+    border: none;
+    outline: none;
+    color: var(--main-color);
+  }
+  .footer .enter-email input::placeholder{
+    color: var(--main-color);
+  }
+  .select{
+    background-color: #0D0D0D;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+.select-small{
+    background-color: #1A1A1A;
+    color: #fff;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+.small-search-btn{
+    background-color: var(--main-color);
+    font-weight: bold;
+}
+.buy.active,.rent.active{
+    background-color: var(--main-color);
+    color: #0D0D0D;
+    font-weight: bold;
+}

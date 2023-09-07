@@ -5,17 +5,17 @@ gallery2.forEach((img)=> {
     img.addEventListener("click",(e)=>{
         let overlay=document.createElement("div")
         overlay.classList.add("over")
-        document.body.appendChild(overlay) 
+        document.body.appendChild(overlay)
         let imageContainer =document.createElement("div")
         imageContainer.classList.add("myDiv")
-        imageContainer.appendChild(image) 
+        imageContainer.appendChild(image)
         image.src=img.src
         let span =document.createElement("span")
         let close =document.createTextNode("x")
         span.classList.add("close")
         span.appendChild(close)
         imageContainer.appendChild(span)
-        document.body.appendChild(imageContainer) 
+        document.body.appendChild(imageContainer)
         img.classList.add("active")
         arrows2.style.display="block"
     })
@@ -41,7 +41,7 @@ next2.onclick=function(){
         }
     })
     myImg++
-    if(myImg==3){
+    if(myImg==gallery2.length){
         myImg=0
     }
     console.log(myImg);

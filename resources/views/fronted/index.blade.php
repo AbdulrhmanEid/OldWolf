@@ -16,15 +16,16 @@
   </head>
   <body>
     <header>
-        <a href="{{ route('LangConverter','ar') }}">Arabic</a>
-        <a href="{{ route('LangConverter','en') }}">English</a>
       <nav class="navbar navbar-expand-lg">
         <a href="{{ route('home') }}" class="navbar-brand" id="brand"
           ><img
             src="{{ asset('fronted/images/logo.jpeg') }}"
             class="img-fluid"
             alt="" style="border-radius:5px ;"
-        /></a>
+        />
+        <a href="{{ route('LangConverter','ar') }}" class="text-light mr-3" style="color: #FCDF5F !important; font-weight: bold ">Ar</a>
+        <a href="{{ route('LangConverter','en') }}" class="text-light" style="color: #FCDF5F !important; font-weight: bold ">En</a>
+    </a>
         <a href="#x" data-toggle="collapse" class="navbar-toggler">
           <i class="fa-solid fa-bars navbar-toggler-icon" id="nav-icon"></i>
         </a>
@@ -46,72 +47,155 @@
               <a href="{{ route('careers') }}" class="nav-link">{{ __('MyCustom.Careers') }}</a>
             </li>
           </ul>
-          <a href="{{ route('search') }}" class="btn pl-4 pr-4 p-2 ml-3" id="btn">
+          <a href="{{ route('search') }}" class="btn text-dark pl-4 pr-4 p-2 ml-3" id="btn">
             <i class="fa-solid fa-magnifying-glass mr-2"></i>Search
           </a>
         </div>
       </nav>
     </header>
-    <form action="{{ route('search') }}" method="post">
-        @csrf
     <section class="search m-auto">
+        <form action="{{ route('search') }}" method="post">
+            @csrf
         <div class="row m-auto">
-          <div class="col-lg-3 text-center p-1 pl-3 pr-3">
+          <div class="col-lg-2 text-center p-1 pl-3 pr-3">
             <p class="text-left">{{ __('MyCustom.location') }}</p>
             <div>
-              <select id="country-dd" class="w-100 select" name="country_name">
-                <option value="">-- Select --</option>
-                @foreach ($counteries as $country)
-                <option value="{{ $country->name }}">{{ $country->name }}</option>
-                @endforeach
+              <select name="country_name" id="first" class="w-100 select">
+                <option value="select option">{{ __('MyCustom.select option') }}</option>
               </select>
-
             </div>
           </div>
           <div class="col-2 text-center p-1 pl-3 pr-3 border-left">
             <p class="text-left">{{ __('MyCustom.region') }}</p>
             <div>
-              <select name="region_name" id="cars" class="w-100 select">
-                <option value="">-- Select --</option>
-                @foreach ($regions as $region)
-                <option>{{$region->name  }}</option>
-                @endforeach
+              <select name="region_name" id="second" class="w-100 select">
+                <option value="select option">{{ __('MyCustom.select option') }}</option>
               </select>
             </div>
           </div>
           <div class="col-3 text-center p-1 pl-3 pr-3 border-left">
+            <p class="text-left">{{ __('MyCustom.City') }}</p>
+            <div>
+              <select name="city_name" id="third" class="w-100 select">
+                <option value="">{{ __('MyCustom.select option') }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-2 text-center p-1 pl-3 pr-3 border-left">
             <p class="text-left">{{ __('MyCustom.Property Type ') }}</p>
             <div>
               <select name="pro_name"  class="w-100 select">
-                <option value="volvo">-- Select --</option>
-                @foreach ($types as $type)
-                <option value="{{$type->name  }}" >{{$type->name  }}</option>
-                @endforeach
-
+                <option value="">{{ __('MyCustom.select option') }}</option>
+                <option value="Appartment">Appartment</option>
+                <option value="Studio">Studio</option>
+                <option value="Villa">Villa</option>
+                <option value="town house">Town House</option>
+                <option value="compound">Compound</option>
+                <option value="chalet">Chalet</option>
+                <option value="twin house">Twin House</option>
+                <option value="duplex">Duplex</option>
+                <option value="full fioor">Full Floor</option>
+                <option value="half floor">Half Floor</option>
+                <option value="whole building">Whole Building</option>
+                <option value="land">Land</option>
+                <option value="bulk sale unit">Bulk Sale Unit</option>
+                <option value="bungalow">Bungalow</option>
+                <option value="hotel apartment">Hotel Apartment</option>
+                <option value="ivilla">Ivilla</option>
               </select>
             </div>
           </div>
-          <div class="col-3 text-center p-1 pl-3 pr-3 border-left">
+          <div class="col-2 text-center p-1 pl-3 pr-3 border-left">
             <p class="text-left">{{ __('MyCustom.Property Status ') }}</p>
             <div>
-              <select name="status_name"  class="w-100 select">
-                <option value="">-- Select --</option>
-                @foreach ($statuses as $status)
-                <option value="{{$status->name  }}" >{{$status->name  }}</option>
-                @endforeach
-            </select>
-
-
+              <select name="status_name" id="third" class="w-100 select">
+                <option value="">{{ __('MyCustom.select option') }}</option>
+                <option value="Buy">Buy</option>
+                <option value="Rent">Rent</option>
+              </select>
             </div>
           </div>
-          <div class="col-1 text-center search-icon p-1 border-left">
-             <button type="submit" class="btn btn-warning"><i class="fa-solid fa-magnifying-glass mr-2"></i></button>{{-- button --}}
+
+          <button type="submit" class="col-1 text-center search-icon p-1 border-left">
+            <i class="fa-solid fa-magnifying-glass mr-2"></i></button>{{-- button --}}
           </div>
         </div>
-
-        </form>{{-- End form --}}
+        </form>
       </section>
-
+      <section class="small-search container-fluid mt-5">
+        <div class="row">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-filter text-light col-2"
+            viewBox="0 0 16 16">
+            <path
+              d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+          </svg>
+          <div class="col-4 p-2 text-center buy hide-filter active ">Buy</div>
+          <div class="col-4 p-2 text-center rent hide-filter">Rent</div>
+        </div>
+        <div class="row hide-filter">
+          <div class="col-2 p-0"></div>
+          <div class="col-8 p-0">
+            <form action="{{ route('smsearch') }}" method="post">
+                @csrf
+            <div class="d-flex div justify-content-between align-items-center mt-4">
+              <select name="lname"  id="fir"  class="w-100 select-small ml-4 mt-auto mb-auto p-2" >
+                <option value="select option">{{ __('MyCustom.location') }}</option>
+              </select> {{-- fir --}}
+              <i class="fa-solid fa-location-dot mr-4"></i>
+              <div></div>
+            </div>
+            <div class="d-flex mt-4">
+              <div class="d-flex div justify-content-between align-items-center mr-1 w-50">
+                <select name="rname"id="sec"
+                  class="w-100 select-small ml-3 mt-auto mb-auto p-2">
+                  <option value="">{{ __('MyCustom.region') }}</option>
+                </select> {{-- sec --}}
+                <i class="fa-solid fa-location-crosshairs mr-4"></i>
+                <div></div>
+              </div>
+              <div class="d-flex div justify-content-between align-items-center ml-1 w-50">
+                <select name="cname"id="thi"
+                  class="w-100 select-small ml-3 mt-auto mb-auto p-2">
+                  <option value="">{{ __('MyCustom.City') }}</option>
+                </select> {{-- Thi --}}
+                <i class="fa-solid fa-location-crosshairs mr-4"></i>
+                <div></div>
+              </div>
+            </div>
+            <div class="d-flex div justify-content-between align-items-center mt-4">
+              <select name="ptype"
+                class="w-100 select-small ml-4 mt-auto mb-auto p-2">
+                <option value="">{{ __('MyCustom.Property Type ') }}</option>
+                <option value="Appartment">Appartment</option>
+                <option value="Studio">Studio</option>
+                <option value="Villa">Villa</option>
+                <option value="town house">Town House</option>
+                <option value="compound">Compound</option>
+                <option value="chalet">Chalet</option>
+                <option value="twin house">Twin House</option>
+                <option value="duplex">Duplex</option>
+                <option value="full fioor">Full Floor</option>
+                <option value="half floor">Half Floor</option>
+                <option value="whole building">Whole Building</option>
+                <option value="land">Land</option>
+                <option value="bulk sale unit">Bulk Sale Unit</option>
+                <option value="bungalow">Bungalow</option>
+                <option value="hotel apartment">Hotel Apartment</option>
+                <option value="ivilla">Ivilla</option>
+              </select>
+              <i class="fa-solid fa-building-circle-check mr-4"></i>
+              <div></div>
+            </div>
+            <button type="submit" class="btn w-100 mt-3 small-search-btn">Search</button>
+          </div>
+        </form>{{-- end Form --}}
+        </div> {{-- filter --}}
+      </section>
     <section class="mt-2 mb-5">
       <div class="container-fluid">
         <h2 class="pt-5 mt-lg-5 most-searched Montserrat text-center text-light mb-4">
@@ -156,12 +240,12 @@
         <div class="row gallery-2">
           <div class="col-lg-6 col-6 p-1 mb-3"  style="height:500px ;border-radius: 30px;">
             <img src="{{ asset('fronted/images/tour.jpeg') }}" class="img-fluid w-100 mb-3" alt="" style="height:50% ;border-radius: 30px;" />
-            <p class="country"><a href="" class="text-light">UAE</a></p>
+            <p class="country"><a href="{{ route('uae') }}" class="text-light">{{ __('MyCustom.UAE ') }}</a></p>
             <img
-            src="{{ asset('fronted/img/photo.jpg') }}"
+            src="{{ asset('fronted/images/1.png') }}"
             class="img-fluid w-100 mb-3"
             alt="" style="height:50% ;border-radius: 30px;" />
-          <p class="second-country"><a href="" class="text-light">Turkiye</a></p>
+          <p class="second-country"><a href="{{ route('turk') }}" class="text-light">{{ __('MyCustom.Turkiye') }}</a></p>
           </div>
           <div
             class="col-lg-6 col-6 p-1 text-center mb-3"  style="height:500px ;border-radius: 30px;"
@@ -171,14 +255,14 @@
               class="img-fluid mb-3 w-100"
               style="border-radius: 30px; height: 50%"
               alt="" />
-            <p class="country"><a href="" class="text-light">Egypt</a></p>
+            <p class="country"><a href="{{ route('egy') }}" class="text-light">{{ __('MyCustom.Egypt') }}</a></p>
             <img
-              src="{{ asset('fronted/images/2.png') }}"
+              src="{{ asset('fronted/images/3.png') }}"
               class="img-fluid w-100 mb-3"
               style="height: 50%;border-radius: 30px;"
               alt="" />
             <p class="second-country">
-              <a href="" class="text-light">Georgia</a>
+              <a href="{{ route('gor') }}" class="text-light">{{ __('MyCustom.Georgia') }}</a>
             </p>
           </div>
           <div class="arrows-2">
@@ -215,7 +299,7 @@
       <div class="contact-info">
         <p>{{ __('MyCustom.Looking For More?') }}</p>
         <h3>{{ __('MyCustom.Talk to our experts or browse through more experties') }}</h3>
-        <div class="btn pl-3 pr-3 p-2 ml-3 mt-3 text-dark" id="btn"><p><a href="{{ route('contact') }}"><b>{{ __('MyCustom.Contact Us') }}</b></a></p></div>
+        <div class="btn pl-3 pr-3 p-2 ml-3 pt-3 mt-3 " id="btn"><p><a href="{{ route('contact') }}" class="text-dark"><b>{{ __('MyCustom.Contact Us') }}</b></a></p></div>
       </div>
     </section>
     <section
@@ -447,19 +531,19 @@
     <section class="footer text-lg-left text-center mt-5 p-5">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-3">
+          <div class="col-lg-3 text-center">
             <img
               src="{{ asset('fronted/images/logo.jpeg') }}"
-              class="img-fluid w-lg-75"
+              class="img-fluid w-lg-75 "
               alt="" style="border-radius:20px ;" />
             <div class="d-flex justify-content-between ml-auto mr-auto icons mt-4 mb-4">
-              <i class="fa-brands fa-square-facebook"></i>
-              <i class="fa-brands fa-whatsapp"></i>
-              <i class="fa-brands fa-instagram"></i>
+             <a href="https://www.facebook.com/oldwolfgroupegyuae" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+              <a href="https://wsend.co/201008105192" target="_blank"><i class="fa-brands fa-whatsapp" ></i></a>
+              <a href="https://instagram.com/owg.egy?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             </div>
           </div>
           <div class="col-lg-4 text-light text-center m-auto">
-            <h4>{{ __('MyCustom. WORKING HOURS') }}</h4>
+            <h4>{{ __('MyCustom. WORKING HOURS')}}</h4>
             <p class="d-flex justify-content-between p-1 border-bottom">
               <span> {{ __('MyCustom.Saturday - Thursday') }}</span>
               <span>10 AM - 19 PM</span>
@@ -501,13 +585,14 @@
                     @csrf
                 <input type="email" placeholder="Enter your email" name="email" />
               </div>
-              <div class="col-4 p-2 subscripe"><button type="submit">Subscripe</button></div>
+              <button type="submit"class="col-4 p-2 subscripe">Subscripe</button>
             </form>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <script src="{{ asset('fronted/js/search.js') }}"></script>
     <script src="{{ asset('fronted/js/main.js') }}"></script>{{-- /js/main.js --}}
     <script src="{{ asset('fronted/js/gallery-index.js') }}"></script>{{-- /js/gallery-index.js --}}
     <script src="{{ asset('fronted/bootstrap-4.0.0-dist/js/popper.min.js') }}"></script>

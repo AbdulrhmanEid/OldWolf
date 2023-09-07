@@ -13,7 +13,7 @@ body{
     color: var(--main-color);
 }
 header{
-    background-image: url(../images/blue-and-white-modern-real-estate-poster-5@2x.png);
+    background-image: url(../images/gor.jpg);
     background-size:cover;
     height: 100vh;
     width: 100%;
@@ -49,28 +49,7 @@ header{
     width: 60px;
 }
 #nav-icon{
-    color: var(--main-color);
-}
-nav{
-    background-color: #0D0D0D;
-}
-nav ul li a{
-    text-decoration: none;
-    color: #fff;
-    margin-left: 10px;
-}
-nav ul li a:hover{
-    color: var(--main-color);
-}
-a.active{
-    border-bottom: dashed;
-    color: var(--main-color);
-}
-#btn{
-    background-color: var(--main-color);
-    border-radius: 10px;
-}
-#btn:hover{
+    
     opacity: 0.8;
 }
 .search{
@@ -81,6 +60,7 @@ a.active{
     left: 50%;
     width: 70%;
     transform: translateX(-50%);
+    border-radius: 10px;
 }
 @media (max-width:992px) {
     .search{
@@ -89,24 +69,66 @@ a.active{
 }
 .search .search-icon{
     background-color: var(--main-color);
+    border-radius: 0 10px 10px 0;
 }
 .search .search-icon{
     color: #0D0D0D;
     font-size: 45px;
 }
-.career-image-1{
+.small-search{
     display: none;
 }
-@media (max-width:767px) {
-    .career-image-1{
-        display: block;
-    }
-    .career-image-2{
+.small-search .div{
+    background-color: #1A1A1A;
+    color: var(--main-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.rent{
+    background-color: #1A1A1A;
+    color: var(--main-color);
+    cursor: pointer;
+    border-radius:0 10px 10px  0;
+    -webkit-border-radius:0 10px 10px  0;
+    -moz-border-radius:0 10px 10px  0;
+    -ms-border-radius:0 10px 10px  0;
+    -o-border-radius:0 10px 10px  0;
+}
+.buy{
+    background-color: var(--main-color);
+    color: #0D0D0D;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px 0 0 10px;
+    -webkit-border-radius: 10px 0 0 10px;
+    -moz-border-radius: 10px 0 0 10px;
+    -ms-border-radius: 10px 0 0 10px;
+    -o-border-radius: 10px 0 0 10px;
+}
+@media (max-width:992px) {
+    .search {
         display: none;
     }
+    .small-search{
+        display: block;
+    }
 }
-.hiring{
+.card .card-info{
+    background-color: #0D0D0D;
+    border-radius: 40px;
+    box-shadow: 0px 4px 1px 0px rgba(255, 255, 255, 0.70);
+}
+.card .card-info i{
+    font-size: 22px;
+}
+.load-more,.load-less{
+    background-color: var(--main-color);
     font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
 }
 .footer{
     background-color: #0D0D0D;
@@ -131,6 +153,19 @@ a.active{
     outline: none;
     border: none;
 }
+.select{
+    background-color: #0D0D0D;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+.select-small{
+    background-color: #1A1A1A;
+    color: #fff;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
 .footer .enter-email input{
     background-color: #1A1A1A;
     border: none;
@@ -140,3 +175,7 @@ a.active{
   .footer .enter-email input::placeholder{
     color: var(--main-color);
   }
+  .small-search-btn{
+    background-color: var(--main-color);
+    font-weight: bold;
+}

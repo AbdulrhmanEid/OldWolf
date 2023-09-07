@@ -34,7 +34,7 @@ header{
 @media (max-width:625px) {
     header{
         height: 75vh;
-        
+
     }
 }
 .overlay{
@@ -169,4 +169,15 @@ a.active{
     font-weight: bold;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
+    outline: none;
+    border: none;
 }
+.footer .enter-email input{
+    background-color: #1A1A1A;
+    border: none;
+    outline: none;
+    color: var(--main-color);
+  }
+  .footer .enter-email input::placeholder{
+    color: var(--main-color);
+  }

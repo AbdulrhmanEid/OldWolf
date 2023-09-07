@@ -154,13 +154,14 @@ a.active {
 .companies .product-info {
   padding: 10px;
 }
-.companies .product-info input {
+.companies .product-info a {
   background-color: var(--main-color);
   border: none;
   outline: none;
   cursor: pointer;
   border-radius: 20px;
   font-weight: bold;
+  color: #000;
 }
 .companies .product-card img {
   transition: all 0.2s;
@@ -180,15 +181,26 @@ a.active {
   margin: 18px;
   cursor: pointer;
 }
-.footer .enter-email {
-  background-color: #1a1a1a;
-  color: var(--main-color);
-  border-radius: 5px 0 0 5px;
+.footer .enter-email{
+    background-color: #1A1A1A;
+    color: var(--main-color);
+    border-radius: 5px 0 0 5px;
 }
-.footer .subscripe {
-  background-color: var(--main-color);
-  color: #0d0d0d;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 0 5px 5px 0;
+.footer .subscripe{
+    background-color: var(--main-color);
+    color: #0D0D0D;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+    border: none;
 }
+.footer .enter-email input{
+    background-color: #1A1A1A;
+    border: none;
+    outline: none;
+    color: var(--main-color);
+  }
+  .footer .enter-email input::placeholder{
+    color: var(--main-color);
+  }

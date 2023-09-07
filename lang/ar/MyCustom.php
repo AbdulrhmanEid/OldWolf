@@ -9,7 +9,6 @@ return [
     'region'=>'المنطقه',
     'Property Type '=>'نوع العقار',
     'Property Status '=>'حاله العقار',
-    'Property Status '=>'حاله العقار',
     'Most Searched Places '=>'الاماكن الاكثر بحثا',
     'Most Searched Places '=>'الاماكن الاكثر بحثا',
     'UAE '=>'الامارات العربيه المتحده',
@@ -37,7 +36,9 @@ return [
     'Georgia Random Result'=>'جورجيا بحث عشوائية',
     'Congratulations, you found your target'=>'تهانينا، لقد وجدت هدفك',
     'Turkiye Random Result'=>'تركيا بحث عشوائية',
-    ' UAE Random Result'=>'الإمارات العربية المتحدة بحث عشوائية',
+    'UAE Random Result'=>'الإمارات العربية المتحدة بحث عشوائية',
+    'City'=>'المدينه',
+    'select option'=>'اختر',
 
 
 

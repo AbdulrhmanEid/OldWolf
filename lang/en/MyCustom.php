@@ -9,7 +9,6 @@ return [
     'region'=>'Region',
     'Property Type '=>'Property Type',
     'Property Status '=>'Property Status',
-    'Property Status '=>'Property Status',
     'Most Searched Places '=>'Most Searched Places',
     'UAE '=>'UAE',
     'Egypt'=>'Egypt',
@@ -27,7 +26,7 @@ return [
     'We'=>'We honoured to have these amazing partners',
     ' Our Employers'=>'Our Employers',
     ' Meet The Team'=>'Meet The Team',
-    ' WORKING HOURS'=>' WORKING HOURS',
+    ' WORKING HOURS'=>'WORKING HOURS',
     'Saturday - Thursday'=>'Saturday - Thursday',
     'Friday'=>'Friday',
     'Careers'=>'Careers',
@@ -39,7 +38,9 @@ return [
     'Georgia Random Result'=>'Georgia Random Result',
     'Congratulations, you found your target'=>'Congratulations, you found your target',
     'Turkiye Random Result'=>'Turkiye Random Result',
-    ' UAE Random Result'=>'UAE Random Result',
+    'UAE Random Result'=>'UAE Random Result',
+    'City'=>'City',
+    'select option'=>'select option',
 
 
 
